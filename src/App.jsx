@@ -1,31 +1,26 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./comp/Navbar";
-import Home from "./comp/Home";
-import About from "./comp/About";
-import Services from "./comp/Services";
-import Contact from "./comp/Contact";
-import Footer from "./comp/Footer";
-import ServiceDetail from "./comp/ServiceDetail";
-import "./App.css"; // Import CSS file here
 
-const App = () => {
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
+import About from "./components/About";
+import Services from "./components/Services";
+import ServiceDetail from "./components/ServiceDetail";
+import Contact from "./components/Contact";
+function App() { 
   return (
     <Router>
-      {/* Background Image */}
-      <div className="bg-image"></div> 
-
-      <Navbar />
+    <Navbar />
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/services" element={<Services/>} />
         <Route path="/:disease" element={<ServiceDetail/>} />
-        <Route path="/book" element={<h1>Book Appointment</h1>} />
+        <Route path="/contact" element={<Contact/>} />
       </Routes>
-      <Footer />
-    </Router>
-  );
-};
+      <Footer/>
+  </Router>
+  )
+}
 
 export default App;

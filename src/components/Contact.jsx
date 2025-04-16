@@ -1,27 +1,26 @@
-import { MapPin, Clock, PhoneCall } from "lucide-react";
-
+import {  FaMapMarkerAlt, FaPhoneAlt, FaClock } from 'react-icons/fa';
 const Contact = () => {
   return (
-    <section className="bg-blue-100 w-full max-w-6xl mx-auto p-6 rounded-lg shadow-lg text-black-800">
+    <section className=" w-full max-w-6xl mx-auto p-6 rounded-lg shadow-lg text-black-800">
       <h2 className="text-4xl font-bold text-center text-blue-700 mb-6">Get in Touch</h2>
       <div className="flex flex-col space-y-6">
         <div className="flex flex-col text-lg">
           <h3 className="text-xl font-bold mb-2">Address</h3>
           <div className="flex items-center">
-            <MapPin className="text-pink-600 mr-3 w-7 h-7" strokeWidth={2.5} />
-            Mediplus, Ground Floor, Sultanpur Road, Below Bank Of Baroda, Arjunganj, Lucknow, Uttar Pradesh 226002
+            <FaMapMarkerAlt className="text-red-600 mr-3 w-7 h-7" strokeWidth={2.5} />
+            Mediplus, Ground Floor, Sultanpur Road, Below Bank Of Baroda <br />Arjunganj, Lucknow Uttar Pradesh 226002
           </div>
         </div>
         <div className="flex flex-col text-lg">
           <h3 className="text-xl font-bold mb-2">Timing</h3>
           <div className="flex items-center">
-            <Clock className="text-pink-600 mr-3 w-6 h-6" strokeWidth={2.5} />
-            Monday to Saturday - 05:00 PM to 08:30 PM | Sunday - 10:00 AM to 01:00 PM
+            <FaClock className="text-yellow-500 mr-3 w-6 h-6" strokeWidth={2.5} />
+            Mon to Sat:- 05:00 PM to 8:30 PM <br /> Sun:- 10:00 AM to 01:00 PM
           </div>
         </div>
         <div className="flex items-center text-lg">
-          <PhoneCall className="text-pink-600 mr-3 w-6 h-6" strokeWidth={2.5} />
-          <a href="tel:+916239923041" className="text-blue-600 hover:underline">62399 23041</a>
+          <FaPhoneAlt className="text-blue-600 mr-3 w-6 h-6" strokeWidth={2.5} />
+          <a href="tel:+916239923041" className="text-blue-600 hover:underline">6239923041</a>
         </div>
       </div>
       <div className="mt-8">

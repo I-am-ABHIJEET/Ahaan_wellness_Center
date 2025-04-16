@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import ServiceDetailData from "../data/ServiceDetailData";
+import ServiceDetailData from "../data/ServiceDetailData"; // Ensure the correct path
 import { useState, useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa";
 
@@ -17,11 +17,7 @@ const ServiceDetail = () => {
   // Show button only after scrolling down 300px
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 300) {
-        setShowButton(true);
-      } else {
-        setShowButton(false);
-      }
+      setShowButton(window.pageYOffset > 300);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -37,7 +33,7 @@ const ServiceDetail = () => {
 
   if (!diseaseData) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-screen bg-gradient-to-b from-blue-50 to-white">
         <h2 className="text-center text-red-600 text-3xl font-semibold animate-bounce">
           Disease Not Found
         </h2>
@@ -46,15 +42,18 @@ const ServiceDetail = () => {
   }
 
   return (
-    <div className="relative">
-      <div className="container mx-auto py-12 px-4 lg:px-16 bg-gradient-to-b from-blue-100 to-white shadow-lg rounded-lg">
-        <h1 className="text-4xl md:text-5xl text-center text-blue-700 mb-12 break-words">
+    <div className="relative bg-gradient-to-b from-blue-50 to-white min-h-screen">
+      <div className="container mx-auto py-12 px-6 lg:px-16">
+        {/* Title Section */}
+        <h1 className=" lg:text-3xl sm:text-2xl text-center text-black font-bold mb-12 break-words sticky top-10 bg-white  p-4 rounded-lg z-10">
           {diseaseData.title}
         </h1>
+
+        {/* Content Section */}
         {diseaseData.content.map((section, index) => (
           <div
             key={index}
-            className="mb-10 p-6 bg-white shadow-md rounded-lg hover:shadow-xl transition-all duration-300"
+            className="mb-10 p-8 bg-white shadow-lg rounded-lg hover:shadow-2xl transition-all duration-300"
           >
             <h2 className="text-2xl md:text-3xl font-semibold text-blue-800 mb-4 border-l-4 border-blue-600 pl-4">
               {section.heading}
